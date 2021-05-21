@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid;
+    box-shadow: 0px 1px 8px;
+    height: 70px;
+}
+.img-nueva img{
+    width: 30px;
+}
+.img-logo img {
+    width: 100px;
+}
+.container-productos{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.container-producto {
+    position: relative;
+    max-width: 320px;
+    width: 100%;
+    background-color: #f1ca89;
+    padding-top: 10px;
+    margin: 20px 0px;
+}
+.container-producto img{
+    width: 320px;
+}
+.boton-comprar button{
+    position: absolute;
+    top: 80%;
+    left: 40px;
+    font-size: 1.5rem;
+    padding: 10px;
+    box-shadow: 4px 4px 4px;
+    background-color: #ffa898;
+}
+.boton-comprar button {
+    border-radius: 10px;
+    font-weight: 700;
+}
+.form-card input, .form-card textarea{
+    width: 90%;
+    margin-top: 20px;
+}
+.form-card input {
+    height: 20px;
+}
+.form-card button {
+    margin-top: 20px;
+    padding: 5px 10px;
+    font-size: 1,2rem;
+    font-weight: 700;
+}
+.titulo-producto{
+    margin: 0px 10px;
+    font-size: 2rem;
+}
+.descripcion-producto{
+    margin: 10px;
+    font-size: 1.2rem;
+}
+/* ------------------------- */
+/* POPUP */
+/* ------------------------- */
+
+.overlay {
+	background: rgba(0,0,0,.3);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	visibility: hidden;
+    z-index: 1;
+}
+
+.overlay.active {
+	visibility: visible;
+}
+
+.popup {
+	background: #F8F8F8;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	padding: 20px;
+	text-align: center;
+	width: 600px;
+	transition: .3s ease all;
+	transform: scale(0.7);
+	opacity: 1;
+}
+
+.popup form .btn-submit:hover {
+	background: rgba(94,125,227, .9);
+}
+.fa-times:before {
+    content: "\f00d";
+}
+
+/* ------------------------- */
+/* ANIMACIONES */
+/* ------------------------- */
+.popup.active {	transform: scale(1); opacity: 1; }
+.popup.active h3 { animation: entradaTitulo .8s ease .5s forwards; }
+.popup.active h4 { animation: entradaSubtitulo .8s ease .5s forwards; }
+.popup.active .contenedor-inputs { animation: entradaInputs 1s linear 1s forwards; }
+
+@keyframes entradaTitulo {
+	from {
+		opacity: 0;
+		transform: translateY(-25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes entradaSubtitulo {
+	from {
+		opacity: 0;
+		transform: translateY(25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes entradaInputs {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
